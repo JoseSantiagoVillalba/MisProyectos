@@ -1,0 +1,27 @@
+@import url(/css/mobile.css);
+@import url('./tablet.css') screen and (min-width: 768px);
+@import url('destopk.css') screen and (min-width: 1024px);
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+    background-color: rgb(241, 227, 209);
+}
+
+h1 {
+    color: rgb(40, 33, 33);
+    font-style: italic;
+    font-family: 'Georgia', serif;
+}
+
+@keyframes aparecerDerecha {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
