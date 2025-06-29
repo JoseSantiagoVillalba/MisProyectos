@@ -1,3 +1,5 @@
+/*Home*/
+
 @keyframes aparecerDerecha {
 from {
     opacity: 0;
@@ -9,7 +11,6 @@ to {
 }
 }
 
-
 @keyframes aparecerIzquierda {
 from {
     opacity: 0;
@@ -20,8 +21,6 @@ to {
     transform: translateX(45%);
 }
 }
-
-
 
 .header{
     background-color:rgba(49, 49, 49, 1);
@@ -50,7 +49,7 @@ to {
     color: white;
     font-style: italic;
     font-family: 'Georgia', serif;
-    margin: 0px  90px 0px;
+    margin: 0px  60px 0px;
     font-size: 24px;
     text-decoration: none;
 }
@@ -114,8 +113,26 @@ to {
     animation: aparecerDerecha 1.8s ease-out forwards;
 }
 
+#elarte{
+    scroll-margin-top: 120px;
+}
+#clases {
+    scroll-margin-top: 120px;
+}
+#productos{
+    scroll-margin-top: 120px;
+}
+#contact{
+    scroll-margin-top: 120px;
+}
 
-.arte{
+
+
+
+
+
+
+.artetit{
     padding-top: 10px;
     font-size: 30px;
     display: flex;
@@ -155,20 +172,74 @@ to {
     width: auto;
 }
 
-.columna-derecha p {
-    padding-top: 10px;
+.columna-derecha div {
+    flex: 1;
+    background-color: rgb(241, 227, 209);
+    height: 500px;
+    width: 80%;
+}
+
+.columna-derecha div p {
+
     color: rgb(40, 33, 33);
     font-size: 15px;
     font-style: italic;
     font-family: 'Georgia', serif;
 }
-.columna-derecha h1 {
-    padding-top: 10px;
+.columna-derecha div h1 {
     color: rgb(40, 33, 33);
     font-style: italic;
     font-family: 'Georgia', serif;
 
 }
+
+.clasestitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgsclases{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgsclases img{
+    height: 417px;
+    width: 90%;
+    margin: 10px 50px;
+}
+
+.botonclases{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.botonclases a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(49, 49, 49, 1);
+    height: 3rem;
+    width: 200px;
+    text-decoration: none;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: rgb(245, 240, 240);
+}
+
+.botonclases a:hover{
+    color: rgb(197, 134, 52);
+    cursor: pointer;
+}
+
+
+
+
+
 
 
 .galeria2 {
@@ -185,7 +256,6 @@ to {
     object-fit: cover;
     transition: transform 0.4s ease;
     display: block;
-
 }
 
 .galeria2 img:hover {
@@ -264,8 +334,68 @@ footer div p {
     transition: transform 0.2s ease;
     padding-left: 10px;
     padding-right: 10px;
+    color: #faefe1;
+    transition: transform 0.8s ease;
+
 }
 
-.redes-sociales a:hover {
+.facebook:hover {
     transform: scale(1.2);
+    color: #4061e4;
+    transition: color 0.8s;
 }
+
+.whatsapp:hover {
+    transform: scale(1.2);
+    color: #40e446;
+    transition: color 0.8s;
+}
+
+.instagram:hover {
+    transform: scale(1.2);
+    color: #be40e4;
+    transition: color 0.8s;
+}
+
+.designed{
+    font-size: small;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*Clases*/
+
+.clatitulo{
+    margin-top: 80px;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
