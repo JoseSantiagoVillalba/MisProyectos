@@ -1,7 +1,8 @@
 const videoIds = [
-  "AVC0YajmP4o",
-  "jsTdReYp1gU",
-  "BQrDPhEUsxY"
+  //simpsons
+  "AVC0YajmP4o","jsTdReYp1gU","BQrDPhEUsxY",
+  //economia 
+  "h4ZgvERwFNg","Ay4fmZdZqJE","MnuIQ1uJokg"
 ];
 
 const container = document.querySelector('.video-container');
