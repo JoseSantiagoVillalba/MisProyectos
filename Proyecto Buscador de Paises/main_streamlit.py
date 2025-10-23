@@ -2,8 +2,15 @@ import streamlit as st
 import pandas as pd
 import funciones_streamlit as fs
 
-df = pd.read_csv("paises.csv")
+
 st.title("🌍 Buscador de Países")
+if fs.existe_archivo_paises():
+    data_frame_del_cvs = pd.read_csv("paises.csv")
+else:
+    data_frame_del_cvs = fs.crear_csv_paises()
+    if data_frame_del_cvs is None:
+        st.error("No se pudo crear o cargar el archivo 'paises.csv'.")
+        st.stop()  # detener la app o hacer algo para avisar
 
 # Inicializar session_state para resultados
 if "resultado" not in st.session_state:
@@ -19,7 +26,7 @@ if opcion.startswith("1"):
     pais = st.text_input("Ingrese nombre o letras del país:")
 
     if st.button("Buscar nombre"):
-        st.session_state.resultado = fs.busqueda_paises(pais)
+        st.session_state.resultado = fs.busqueda_paises(pais,data_frame_del_cvs)
 
 # BUSQUEDA POR POBLACION
 elif opcion.startswith("2"):
@@ -27,7 +34,7 @@ elif opcion.startswith("2"):
     max_p = st.number_input("Población máxima (millones):", min_value=0.0)
 
     if st.button("Buscar población"):
-        st.session_state.resultado = fs.busqueda_poblacion(min_p, max_p)
+        st.session_state.resultado = fs.busqueda_poblacion(min_p, max_p,data_frame_del_cvs)
 
 # BUSQUEDA POR SUPERFICIE
 elif opcion.startswith("3"):
@@ -35,14 +42,14 @@ elif opcion.startswith("3"):
     max_s = st.number_input("Superficie máxima (km²):", min_value=0.0)
 
     if st.button("Buscar superficie"):
-        st.session_state.resultado = fs.busqueda_superficie(min_s, max_s)
+        st.session_state.resultado = fs.busqueda_superficie(min_s, max_s,data_frame_del_cvs)
 
 # BUSQUEDA POR CONTINENTE
 elif opcion.startswith("4"):
     continente = st.text_input("Ingrese continente:")
 
     if st.button("Buscar continente"):
-        st.session_state.resultado = fs.busqueda_continente(continente)
+        st.session_state.resultado = fs.busqueda_continente(continente,data_frame_del_cvs)
 
 # MOSTRAR RESULTADOS
 if st.session_state.resultado is not None:
