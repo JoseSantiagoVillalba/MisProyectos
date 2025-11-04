@@ -16,7 +16,6 @@ def crear_csv_paises():
         url = "https://restcountries.com/v3.1/independent?status=true"
         response = requests.get(url)
         response.raise_for_status()
-
         datos = response.json()
         paises = []
         for pais in datos:
@@ -39,16 +38,24 @@ def crear_csv_paises():
         return data_frame_del_cvs
 
     except requests.RequestException as e:
-        st.error(f"❌ Error al conectar con la API: {e}")
+        st.error(f"Error al conectar con la API: {e}")
         return None
     except Exception as e:
-        st.error(f"⚠️ Error inesperado: {e}")
+        st.error(f"Error inesperado: {e}")
         return None
 
 
 
 # ------------------------------
-# Funciones de búsqueda y estadísticas
+# Estas Funciones sirven para buscar dentro del cvs por el nombre de la columna: 
+# Nombre, Continente, Población (millones) y Superficie (km²)
+# se toma el titulo y lo pasamos a lower (por ejemplo con nombre.lower()).
+# La variable "coincidencias" se iguala al dataframe del cvs y dentro se busca la columna con el 
+# titulo en lower y se retorna la coincidencia.
+# Si la coincidencia esta vacia, se retorna un mensaje de error
+
+#Con las busquedas de poblacion y superficie, se agregan parametros de maximo y minimo 
+# y se comparan para encontrar los elementos correspondientes. 
 # ------------------------------
 
 def busqueda_paises(nombre,data_frame_del_cvs):
@@ -83,7 +90,17 @@ def busqueda_superficie(min_s, max_s,data_frame_del_cvs):
 
 
 
-#Estadisticas
+# ------------------------------
+# Estas Funciones sirven para buscar dentro del cvs por el nombre de la columna: 
+# Nombre, Continente, Población (millones) y Superficie (km²)
+# se toma el titulo y lo pasamos a lower (por ejemplo con nombre.lower()).
+# La variable "coincidencias" se iguala al dataframe del cvs y dentro se busca la columna con el 
+# titulo en lower y se retorna la coincidencia.
+# Si la coincidencia esta vacia, se retorna un mensaje de error
+
+#Con las busquedas de poblacion y superficie, se agregan parametros de maximo y minimo 
+# y se comparan para encontrar los elementos correspondientes. 
+# ------------------------------
 
 def cantidad_paises_por_continente(data_frame_del_cvs,datos=None):
     if datos is None:
